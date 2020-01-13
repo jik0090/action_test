@@ -1,0 +1,8 @@
+{
+  "name": "action_test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jik0090/action_test.git",
+  "author": "lyohan <yohan@linewalks.com>",
+  "license": "MIT"
+}
