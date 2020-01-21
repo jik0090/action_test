@@ -22,7 +22,6 @@ jobs:
       working-directory: ./frontend
       run: |
         yarn install
-        yarn test
         yarn build
      - name: master deploy
        run: |
