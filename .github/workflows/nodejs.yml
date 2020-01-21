@@ -10,14 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout source code
-        uses: actions/checkout@devolop
+        uses: actions/checkout@v2
+        with:
+          ref: develop
 
       - name: yarn install, build, and test
         # working-directory: ./frontend
         run: |
           yarn install
           yarn build
-          
+
       - name: master deploy
         run: |
           git config --global user.name 'jik0090'
