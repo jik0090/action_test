@@ -26,4 +26,4 @@ jobs:
           git config --global user.email 'jik0090@naver.com'
           git add .
           git commit -m "Automated report"
-          git push origin master
+          git push
