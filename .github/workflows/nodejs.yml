@@ -2,28 +2,26 @@ name: master deploy
 
 on:   
   pull_request:
-    branches:
-      - develop
+    branches: [develop]
     types: [closed]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
     steps:
-    - name: checkout source code
-    - uses: actions/checkout@devolop    
-    - name: yarn install, build, and test
-      # working-directory: ./frontend
-      run: |
-        yarn install
-        yarn build
-    - name: master deploy
-      run: |
-        git config --global user.name 'jik0090'
-        git config --global user.email 'jik0090@naver.com'
-        git add .
-        git commit -m "Automated report"
-        git push origin master
+      - name: checkout source code
+        uses: actions/checkout@devolop
+
+      - name: yarn install, build, and test
+        # working-directory: ./frontend
+        run: |
+          yarn install
+          yarn build
+          
+      - name: master deploy
+        run: |
+          git config --global user.name 'jik0090'
+          git config --global user.email 'jik0090@naver.com'
+          git add .
+          git commit -m "Automated report"
+          git push origin master
