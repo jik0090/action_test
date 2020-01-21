@@ -19,14 +19,14 @@ jobs:
     - name: checkout source code
     - uses: actions/checkout@devolop    
     - name: yarn install, build, and test
-      working-directory: ./frontend
+      # working-directory: ./frontend
       run: |
         yarn install
         yarn build
      - name: master deploy
        run: |
-          git config --global user.name 'Your Name'
-          git config --global user.email 'your-username@users.noreply.github.com'
+          git config --global user.name 'jik0090'
+          git config --global user.email 'jik0090@naver.com'
           git add .
           git commit -m "Automated report"
           git push origin master
