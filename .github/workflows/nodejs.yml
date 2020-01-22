@@ -20,10 +20,10 @@ jobs:
           yarn build
           git config --global user.name 'jik0090'
           git config --global user.email 'jik0090@naver.com'
-          git remote set-url origin https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}
           git add .
           git commit -m 'master deploy'
-          git push origin develop:master
+          git push origin +develop:master
+          git reset HEAD^
       # - name: master deploy
       #   uses: JamesIves/github-pages-deploy-action@releases/v3
       #   with:
