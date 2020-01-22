@@ -12,8 +12,12 @@ jobs:
       - name: checkout source code
         uses: actions/checkout@v2
         with:
-          ref: develop
+          ref: master
           token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Merge Develop
+        run: git merge develop
+   
       - name: yarn install, build, and test
         run: |
           yarn install
@@ -21,7 +25,8 @@ jobs:
           git config --global user.name 'jik0090'
           git config --global user.email 'jik0090@naver.com'
           git add .
-
+          git commit -m 'master deploy'
+          git push origin master
       # - name: master deploy
       #   uses: JamesIves/github-pages-deploy-action@releases/v3
       #   with:
