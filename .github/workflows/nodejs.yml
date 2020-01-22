@@ -15,13 +15,16 @@ jobs:
           ref: develop
           token: ${{ secrets.ACCESS_TOKEN }}
 
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+
       - name: yarn install, build, and test
         run: |
           yarn install
           yarn build
-          git config --global user.name 'jik0090'
-          git config --global user.email 'jik0090@naver.com'
-          git status
+          
+        env:
+          CI: true
       # - name: master deploy
       #   uses: JamesIves/github-pages-deploy-action@releases/v3
       #   with:
