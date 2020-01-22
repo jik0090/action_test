@@ -25,5 +25,6 @@ export default {
     }),
     commonjs(),
   ],
-  external: ["react"],
+  globals: { 'styled-components': 'styled' },
+  external: ["react", "styled-components"],
 } 
