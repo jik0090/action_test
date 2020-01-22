@@ -13,16 +13,18 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: develop
-
+          token: ${{ secrets.ACCESS_TOKEN }}
       - name: yarn install, build, and test
         # working-directory: ./frontend
         run: |
           yarn install
           yarn build
-
-      - name: master deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: master
-          FOLDER: .
+          git add .
+          git commit -m 'master deploy'
+          git push origin master
+      # - name: master deploy
+      #   uses: JamesIves/github-pages-deploy-action@releases/v3
+      #   with:
+      #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      #     BRANCH: master
+      #     FOLDER: .
