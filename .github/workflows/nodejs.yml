@@ -15,7 +15,6 @@ jobs:
           ref: develop
           token: ${{ secrets.ACCESS_TOKEN }}
       - name: yarn install, build, and test
-        uses: actions/setup-node@v1
         run: |
           yarn install
           yarn build
