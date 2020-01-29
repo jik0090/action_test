@@ -22,13 +22,23 @@ jobs:
         run: |
           yarn install
           yarn build
-        env:
-          CI: true
       
+
+      - name: Save building file
+      - uses: actions/upload-artifact@v1
+        with:
+          name: dist
+          path: dist
+
+      - name: Save source file
+      - uses: actions/upload-artifact@v1
+        with:
+          name: src
+          path: src
 
       # - name: master deploy
       #   uses: JamesIves/github-pages-deploy-action@releases/v3
       #   with:
       #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       #     BRANCH: master
-      #     FOLDER: .
+      #     FOLDER: dist
