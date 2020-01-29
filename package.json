@@ -4,8 +4,7 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {
-    "build": "rollup -c",
-    "deploy": "git add .&& git commit -m 'master deploy'"
+    "build": "rollup -c"
   },
   "repository": "https://github.com/jik0090/action_test.git",
   "author": "lyohan <yohan@linewalks.com>",
